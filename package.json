@@ -1,0 +1,30 @@
+{
+  "name": "tascli",
+  "version": "1.0.1",
+  "description": "",
+  "bin": "main.js",
+  "main": "main.js",
+  "dependencies": {
+    "@amphibian/remove-from-array": "^2.0.3",
+    "boxen": "^4.2.0",
+    "chalk": "^4.1.0",
+    "cliui": "^6.0.0",
+    "jsonfile": "^6.0.1",
+    "prompts": "^2.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tascli/tascli.git"
+  },
+  "author": "Bastian Kramer",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/tascli/tascli/issues"
+  },
+  "homepage": "https://github.com/tascli/taskcli#readme"
+}
