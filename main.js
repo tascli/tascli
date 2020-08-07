@@ -33,7 +33,7 @@ if (argument === 'init') {
 
 // CHECK exist tacli.json
 if (fs.existsSync(PathToFile) === false) {
-  console.log(`\n${chalk.bold('There isn’t a storage file')}\nUse ${chalk.green.bold('tacli init')} to create a starage file`);
+  console.log(`\n${chalk.bold('There isn’t a storage file')}\nUse ${chalk.gray('$')} ${chalk.green.bold('tacli init')} to create a starage file`);
   process.exit();
 }
 
@@ -53,6 +53,12 @@ const move = require('./commands/move.js');
 // LIST.js
 const list = require('./commands/list.js');
 
+// HELP.js
+const help = require('./commands/help.js');
+
+// ERROR.js
+const error = require('./commands/error.js');
+
 // ###### other VARIABLES / OBJECTS ######
 
 // JsonObject
@@ -69,6 +75,10 @@ if (argument === 'create') {
   remove.task(JsonObject, PathToFile);
 } else if (argument === 'move') {
   move.task(JsonObject, PathToFile);
-} else {
+} else if (argument === 'help') {
+  help()
+} else if (argument === undefined){
   list.task(JsonObject);
+} else {
+  error.BadArgument()
 }
