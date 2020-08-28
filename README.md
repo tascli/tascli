@@ -39,5 +39,17 @@ Using [snapcraft](https://www.snapcraft.io):
 
 `tascli init` - create an empty json-file to store your tasks
 
+## ToDo
+
+(*) move to typescipt
+
+(*) new list
+
+(*) new README
+
+( ) new command: info
+
+( ) self hosted sync
+
 ## 👏 Thanks to
 [chalk](https://www.npmjs.com/package/chalk), [jsonfile](https://www.npmjs.com/package/jsonfile), [prompts](https://www.npmjs.com/package/prompts), [removeFromArray](https://www.npmjs.com/package/@amphibian/remove-from-array), [cliui](https://www.npmjs.com/package/cliui), [boxen](https://www.npmjs.com/package/boxen)
