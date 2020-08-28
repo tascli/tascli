@@ -1,17 +1,17 @@
 // ### DEPENDENCIES ###
 
 // JSONFILE - Easily read/write JSON files in Node.js.
-const jsonfile = require('jsonfile');
+import jsonfile = require('jsonfile');
 
 // PROMPTS - ❯ Lightweight, beautiful and user-friendly interactive prompts
-const prompts = require('prompts');
+import prompts = require('prompts');
 
 // REMOVE-FROM-ARRAY - remove an index from an array
-const removeFromArray = require('@amphibian/remove-from-array');
+import removeFromArray = require('@amphibian/remove-from-array');
 
 module.exports = {
-  task: (JsonObject, PathToFile) => {
-    const TaskList = [];
+  task: (JsonObject:any, PathToFile:string) => {
+    const TaskList:string[] = [];
 
     // TASKS as array
     for (let i = 0; i < JsonObject.tasks.length; i += 1) {
@@ -19,7 +19,7 @@ module.exports = {
     }
 
     // DEFINED the prompt
-    const question = {
+    const question:any = {
       type: 'select',
       name: 'TaskRemove',
       message: 'What you wish to remove from your list?',

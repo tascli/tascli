@@ -1,13 +1,13 @@
 // ### DEPENDENCIES ###
 
 // PROMPTS - ❯ Lightweight, beautiful and user-friendly interactive prompts
-const prompts = require('prompts');
+import prompts = require('prompts');
 
 // JSONFILE - Easily read/write JSON files in Node.js.
-const jsonfile = require('jsonfile');
+import jsonfile = require('jsonfile');
 
 // CHALK - Terminal string styling done right
-const chalk = require('chalk');
+import chalk = require('chalk');
 
 // ### M ###
 // ### A ###
@@ -15,7 +15,7 @@ const chalk = require('chalk');
 // ### N ###
 
 module.exports = {
-  task: (JsonObject, PathToFile) => {
+  task: (JsonObject:any, PathToFile:any) => {
     const TaskList = [];
 
     // TASKS as array
@@ -24,7 +24,7 @@ module.exports = {
     }
 
     // DEFINED the prompt
-    const question = [
+    const question:any = [
       {
         type: 'select',
         name: 'TaskMove',
