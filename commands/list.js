@@ -15,7 +15,7 @@ const ui = require('cliui')();
 // ### N ###
 
 module.exports = {
-  task: (JsonObject:any) => {
+  task: (JsonObject) => {
     // Planned
     const planned = [];
 

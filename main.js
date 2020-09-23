@@ -1,31 +1,31 @@
-#!/usr/bin/env ts-node-script
+#!/usr/bin/env node
 // ### DEPENDENCIES ###
 
 // FileSystem
-import fs = require('fs');
+const fs = require('fs');
 
 // CHALK - Terminal string styling done right
-import chalk = require('chalk');
+const chalk = require('chalk');
 
 // OS
-import os = require('os');
+const os = require('os');
 
 // ### VARIABLES ###
 
 // Arguments
-const Arguments:string[] = process.argv;
+const Arguments = process.argv;
 
 // JsonTemplate
-const JsonTemplate = { tasks: [] };
+const JsonTemplate = { tasks: [], users:[] };
 
 // ###### JsonFile ######
 
 // Path to tascli.json
-const PathToFile:string = `${os.homedir()}/tascli.json`;
+const PathToFile = `${os.homedir()}/tascli.json`;
 
 // CREATE tascli.json
 if (Arguments[2] === 'init') {
-  const data:string = JSON.stringify(JsonTemplate, null, 4);
+  const data = JSON.stringify(JsonTemplate, null, 4);
   fs.writeFileSync(PathToFile, data, 'utf8');
   console.log(`${chalk.green('✔')} created tascli.json in ${chalk.bold(os.homedir())}`);
   process.exit();
@@ -64,7 +64,17 @@ const info = require('./commands/info.js')
 // ###### other VARIABLES / OBJECTS ######
 
 // JsonObject
-const JsonObject:any = JsonFile;
+const JsonObject = JsonFile;
+
+if (Arguments[2] === undefined || Arguments[2] === 'help') {
+  
+} else {
+
+  if (Arguments[3] === undefined) {
+    error.WhereAreArgument();
+    process.exit()
+  }
+}
 
 // ### M ###
 // ### A ###

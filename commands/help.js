@@ -1,10 +1,10 @@
 // ### DEPENDENCIES ###
 
 // CHALK - Terminal string styling done right
-import chalk = require('chalk');
+const chalk = require('chalk');
 
 // CLIUI - Easily create complex multi-column command-line-interfaces.
-import ui = require('cliui');
+const ui = require('cliui')();
 
 // ### M ###
 // ### A ###
@@ -12,15 +12,14 @@ import ui = require('cliui');
 // ### N ###
 
 module.exports = () => {
-  ui();
   ui.div({
     text: `
             ${chalk.bold('Available commands')}:
 
-            ${chalk.gray('$')} ${chalk.cyan('tascli')}         - list all tasks
-            ${chalk.gray('$')} ${chalk.cyan('tascli')} create  - create a task
-            ${chalk.gray('$')} ${chalk.cyan('tascli')} remove  - delete a task
-            ${chalk.gray('$')} ${chalk.cyan('tascli')} move    - set the status of a task
+            ${chalk.gray('$')} ${chalk.cyan('tascli')}               - list all tasks
+            ${chalk.gray('$')} ${chalk.cyan('tascli')} create ${chalk.gray('<task>')} - create a task
+            ${chalk.gray('$')} ${chalk.cyan('tascli')} remove ${chalk.gray('<task>')} - delete a task
+            ${chalk.gray('$')} ${chalk.cyan('tascli')} move ${chalk.gray('<task>')}   - set the status of a task
           `,
     width: 55,
   }, {

@@ -2,7 +2,7 @@
 # TasCLI
 
 <div style="width: 100%; text-align:center;">
-    <img src="images/list.png" style="border-radius: 5px; height: 200px; width:auto; box-shadow: 10px 10px 15px -3px rgba(138,138,138,1);">
+    <img src="images/list.gif" style="border-radius: 5px; height: 200px; width:auto; box-shadow: 10px 10px 15px -3px rgba(138,138,138,1);">
 </div>
 
 ## Description
@@ -11,8 +11,8 @@ Tascli is an open-source task-manager like [monday.com](https://www.monday.com),
 ## Features
 
 - Easy syntax
-- Self-hosted sync
 - Beautiful list
+and many more
 
 ## Install
 
@@ -20,11 +20,8 @@ You have installed [nodejs](https://www.nodejs.org) to run tascli
 
 Using [npm](https://www.npmjs.org) / [yarn](https://yarnpkg.com/):
 
-`npm install -g tascli` or `yarn global add tascli`
+`npm install -g @tascli/preview` or `yarn global add tascli`
 
-Using [snapcraft](https://www.snapcraft.io):
-
-`snap install tascli`
 ## Documentation
 
 `tascli` - list all tasks
@@ -38,18 +35,6 @@ Using [snapcraft](https://www.snapcraft.io):
 `tascli set <name>` - set the status of a task
 
 `tascli init` - create an empty json-file to store your tasks
-
-## ToDo
-
-(*) move to typescipt
-
-(*) new list
-
-(*) new README
-
-( ) new command: info
-
-( ) self hosted sync
 
 ## 👏 Thanks to
 [chalk](https://www.npmjs.com/package/chalk), [jsonfile](https://www.npmjs.com/package/jsonfile), [prompts](https://www.npmjs.com/package/prompts), [removeFromArray](https://www.npmjs.com/package/@amphibian/remove-from-array), [cliui](https://www.npmjs.com/package/cliui), [boxen](https://www.npmjs.com/package/boxen)

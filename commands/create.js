@@ -1,17 +1,17 @@
 // ### DEPENDENCIES ###
 
 // CHALK - Terminal string styling done right
-import chalk = require('chalk');
+const chalk = require('chalk');
 
 // JSONFILE - Easily read/write JSON files in Node.js.
-import jsonfile = require('jsonfile');
+const jsonfile = require('jsonfile');
 
 // PROMPTS - ❯ Lightweight, beautiful and user-friendly interactive prompts
-import prompts = require('prompts');
+const prompts = require('prompts');
 
 // ### VARIABLES ###
 
-let TaskTemplate:any = {
+let TaskTemplate = {
   name:'',
   description:'',
   user:'',
@@ -26,17 +26,16 @@ let TaskTemplate:any = {
 // ### N ###
 
 module.exports = {
-  task: (JsonObject:any, PathToFile:string, Argument:string[]) => {
-    console.log(Argument);
+  task: (JsonObject, PathToFile, Argument) => {
     
     // DEFINED the prompt
-    let users:any[] = []
+    let users = []
     for (let i = 0; i < JsonObject.users.length; i++) {
       users.push({title: JsonObject.users[i]})
       
     }
     
-    const questions:any = [
+    const questions = [
       /* Description */ {
         name: 'description',
         message: 'And the description?',
@@ -84,7 +83,7 @@ module.exports = {
       JsonObject.tasks.unshift(TaskTemplate);
 
       // WRITE to tascli.json
-      jsonfile.writeFile(PathToFile, JsonObject, (err:any) => {
+      jsonfile.writeFile(PathToFile, JsonObject, (err) => {
         if (err) console.error(err);
       });
     })();
