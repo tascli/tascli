@@ -1,6 +1,6 @@
 {
   "name": "tascli",
-  "version": "0.0.3",
+  "version": "2.0.0",
   "description": "Tascli is an open-source task-manager like monday.com, but for command line nerds.",
   "bin": {
     "tascli": "main.js"
