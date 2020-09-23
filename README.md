@@ -1,4 +1,3 @@
-# Version 2.0 is not stable
 # TasCLI
 
 <div style="width: 100%; text-align:center;">
