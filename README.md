@@ -35,5 +35,17 @@ Using [npm](https://www.npmjs.org) / [yarn](https://yarnpkg.com/):
 
 `tascli init` - create an empty json-file to store your tasks
 
+### Create a new user
+
+On Windows:
+
+1. open `C:\users\[USER]\tascli.json`
+2. You can write them in the bracket behind users
+
+On Linux:
+
+1. open `/home/[USER]/tascli.json`
+2. You can write them in the bracket behind users
+
 ## 👏 Thanks to
 [chalk](https://www.npmjs.com/package/chalk), [jsonfile](https://www.npmjs.com/package/jsonfile), [prompts](https://www.npmjs.com/package/prompts), [removeFromArray](https://www.npmjs.com/package/@amphibian/remove-from-array), [cliui](https://www.npmjs.com/package/cliui), [boxen](https://www.npmjs.com/package/boxen)
