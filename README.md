@@ -19,7 +19,7 @@ You have installed [nodejs](https://www.nodejs.org) to run tascli
 
 Using [npm](https://www.npmjs.org) / [yarn](https://yarnpkg.com/):
 
-`npm install -g @tascli/preview` or `yarn global add tascli`
+`npm install -g tascli` or `yarn global add tascli`
 
 ## Documentation
 
