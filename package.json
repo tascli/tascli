@@ -1,6 +1,6 @@
 {
   "name": "tascli",
-  "version": "1.1.0",
+  "version": "2.1.0",
   "description": "Tascli is an open-source task-manager like monday.com, but for command line nerds.",
   "bin": "main.js",
   "main": "main.js",
@@ -10,7 +10,8 @@
     "chalk": "^4.1.0",
     "cliui": "^6.0.0",
     "jsonfile": "^6.0.1",
-    "prompts": "^2.3.2"
+    "prompts": "^2.3.2",
+    "update-notifier": "4.1.1"
   },
   "devDependencies": {
     "eslint": "^7.5.0",
