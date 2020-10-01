@@ -67,14 +67,14 @@ const help = require('./commands/help.js');
 // ERROR.js
 const error = require('./commands/error.js');
 
-// USER.js
-const user = require('./commands/user.js');
+/** INFO.js - Get more info about a task */
+const info = require('./commands/info.js')
 // ###### other VARIABLES / OBJECTS ######
 
 // JsonObject
 const JsonObject = JsonFile;
 
-if (Arguments[2] === undefined || Arguments[2] === 'help' || Arguments[2] === 'user') {
+if (Arguments[2] === undefined || Arguments[2] === 'help') {
   
 } else {
 
@@ -88,7 +88,6 @@ if (Arguments[2] === undefined || Arguments[2] === 'help' || Arguments[2] === 'u
 // ### A ###
 // ### I ###
 // ### N ###
-
 
 if  (Arguments[2] === 'create') {
   create.task(JsonObject, PathToFile, Arguments[3])

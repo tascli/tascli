@@ -2,7 +2,9 @@
   "name": "tascli",
   "version": "2.1.0",
   "description": "Tascli is an open-source task-manager like monday.com, but for command line nerds.",
-  "bin": "main.js",
+  "bin": {
+    "tascli": "main.js"
+  },
   "main": "main.js",
   "dependencies": {
     "@amphibian/remove-from-array": "^2.0.3",
@@ -22,11 +24,17 @@
     "type": "git",
     "url": "git+https://github.com/tascli/tascli.git"
   },
-  "keywords": ["cli", "cli-tool", "task-manager", "nodejs"],
+  "keywords": [
+    "cli",
+    "cli-tool",
+    "task-manager",
+    "todo",
+    "nodejs"
+  ],
   "author": "Bastian Kramer",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/tascli/tascli/issues"
   },
-  "homepage": "https://github.com/tascli/taskcli#readme"
+  "homepage": "https://tascli.github.io/"
 }

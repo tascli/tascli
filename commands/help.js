@@ -11,25 +11,24 @@ const ui = require('cliui')();
 // ### I ###
 // ### N ###
 
-module.exports = function () {
-
+module.exports = () => {
   ui.div({
     text: `
             ${chalk.bold('Available commands')}:
 
-            ${chalk.gray('$')} ${chalk.cyan('tascli')}         - list all tasks
-            ${chalk.gray('$')} ${chalk.cyan('tascli')} create  - create a task
-            ${chalk.gray('$')} ${chalk.cyan('tascli')} remove  - delete a task
-            ${chalk.gray('$')} ${chalk.cyan('tascli')} move    - set the status of a task
+            ${chalk.gray('$')} ${chalk.cyan('tascli')}               - list all tasks
+            ${chalk.gray('$')} ${chalk.cyan('tascli')} create ${chalk.gray('<task>')} - create a task
+            ${chalk.gray('$')} ${chalk.cyan('tascli')} remove ${chalk.gray('<task>')} - delete a task
+            ${chalk.gray('$')} ${chalk.cyan('tascli')} move ${chalk.gray('<task>')}   - set the status of a task
           `,
-    width: 55
+    width: 55,
   }, {
     text: `
             ${chalk.bold('About tascli')}:
 
             Tascli is an open-source task-manager like monday.com, but for command line nerds.
           `,
-    width: 55
-  })
+    width: 55,
+  });
   console.log(ui.toString());
 };
