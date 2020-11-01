@@ -26,6 +26,8 @@ Using [npm](https://www.npmjs.org) / [yarn](https://yarnpkg.com/):
 `tascli` - list all tasks
 
 `tascli create <name>` - create a task
+    
+  `tascli create <name> -q/--quick` - create a task only with his name
 
 `tascli info <name>` - get more info about a task
 
