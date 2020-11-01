@@ -51,6 +51,7 @@ const JsonFile = require(PathToFile);
 
 // CREATE.js
 const create = require('./commands/create.js');
+const createQuick = require('./commands/createQuick.js')
 
 // REMOVE.js
 const remove = require('./commands/remove.js');
@@ -89,17 +90,21 @@ if (Arguments[2] === undefined || Arguments[2] === 'help') {
 // ### I ###
 // ### N ###
 
-if  (Arguments[2] === 'create') {
+if  (Arguments.includes('create')) {
+  if (Arguments.includes('--quick') || Arguments.includes('-q')) {
+    createQuick.task(JsonObject, PathToFile, Arguments)
+    process.exit()
+  }
   create.task(JsonObject, PathToFile, Arguments[3])
-} else if  (Arguments[2] === 'remove') {
+} else if  (Arguments.includes('remove')) {
   remove.task(JsonObject, PathToFile, Arguments[3]);
-} else if  (Arguments[2] === 'set') {
+} else if  (Arguments.includes('move')) {
   move.task(JsonObject, PathToFile, Arguments[3]);
-} else if  (Arguments[2] === 'info') {
+} else if  (Arguments.includes('info')) {
   info(JsonObject, Arguments[3]);
-} else if (Arguments[2] === 'user') {
+} else if (Arguments.includes('user')) {
   user(JsonObject, PathToFile)
-} else if  (Arguments[2] === 'help') {
+} else if  (Arguments.includes('help')) {
   help();
 } else if  (Arguments[2] === undefined) {
   if (JsonObject.tasks.length > 0) {
