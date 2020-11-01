@@ -1,3 +1,5 @@
+![Node.js Package](https://github.com/tascli/tascli/workflows/Node.js%20Package/badge.svg)
+
 # TasCLI
 
 <div style="width: 100%; text-align:center;">
