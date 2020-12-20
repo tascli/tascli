@@ -11,6 +11,11 @@
         "ecmaVersion": 11
     },
     "rules": {
-      "no-console": "off"
+      "no-console": "off",
+      "no-plusplus": "off",
+      "consistent-return": "off",
+      "prefer-destructuring": "off",
+      "import/no-dynamic-require": "off",
+      "no-empty": "off"
     }
 }

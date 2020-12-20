@@ -12,14 +12,14 @@ const prompts = require('prompts');
 // ### VARIABLES ###
 
 let TaskTemplate = {
-  name:'',
-  description:'',
-  user:'',
-  date:'',
-  priority:'',
-  star:false,
-  status:'planned'
-}
+  name: '',
+  description: '',
+  user: '',
+  date: '',
+  priority: '',
+  star: false,
+  status: 'planned',
+};
 // ### M ###
 // ### A ###
 // ### I ###
@@ -27,14 +27,12 @@ let TaskTemplate = {
 
 module.exports = {
   task: (JsonObject, PathToFile, Argument) => {
-    
     // DEFINED the prompt
-    let users = []
-    for (let i = 0; i < JsonObject.users.length; i++) {
-      users.push({title: JsonObject.users[i]})
-      
+    const users = [];
+    for (let i = 0; i < JsonObject.users.length; i += 1) {
+      users.push({ title: JsonObject.users[i] });
     }
-    
+
     const questions = [
       /* Description */ {
         name: 'description',
@@ -65,20 +63,20 @@ module.exports = {
         initial: true,
         active: '★',
         inactive: 'no',
-      }
+      },
     ];
 
     // START the prompt
     (async () => {
       const response = await prompts(questions);
-      
+
       TaskTemplate.name = Argument;
       TaskTemplate.description = response.description;
       TaskTemplate.user = response.user;
       TaskTemplate.date = response.date;
       TaskTemplate.priority = response.priority;
       TaskTemplate.star = response.star;
-      
+
       // ADD to array
       JsonObject.tasks.unshift(TaskTemplate);
 

@@ -19,12 +19,12 @@ const updateNotifier = require('update-notifier');
 const Arguments = process.argv;
 
 // JsonTemplate
-const JsonTemplate = { tasks: [], users:[] };
+const JsonTemplate = { tasks: [], users: [] };
 
 const pkg = require('./package.json');
 
 // CHECK for update
-updateNotifier({pkg, updateCheckInterval: 0}).notify();
+updateNotifier({ pkg, updateCheckInterval: 0 }).notify();
 
 // ###### JsonFile ######
 
@@ -51,7 +51,7 @@ const JsonFile = require(PathToFile);
 
 // CREATE.js
 const create = require('./commands/create.js');
-const createQuick = require('./commands/createQuick.js')
+const createQuick = require('./commands/createQuick.js');
 
 // REMOVE.js
 const remove = require('./commands/remove.js');
@@ -69,20 +69,17 @@ const help = require('./commands/help.js');
 const error = require('./commands/error.js');
 
 /** INFO.js - Get more info about a task */
-const info = require('./commands/info.js')
+const info = require('./commands/info.js');
 // ###### other VARIABLES / OBJECTS ######
 
 // JsonObject
 const JsonObject = JsonFile;
 
 if (Arguments[2] === undefined || Arguments[2] === 'help') {
-  
-} else {
 
-  if (Arguments[3] === undefined) {
-    error.WhereAreArgument();
-    process.exit()
-  }
+} else if (Arguments[3] === undefined) {
+  error.WhereAreArgument();
+  process.exit();
 }
 
 // ### M ###
@@ -90,23 +87,21 @@ if (Arguments[2] === undefined || Arguments[2] === 'help') {
 // ### I ###
 // ### N ###
 
-if  (Arguments.includes('create')) {
+if (Arguments.includes('create')) {
   if (Arguments.includes('--quick') || Arguments.includes('-q')) {
-    createQuick.task(JsonObject, PathToFile, Arguments)
-    process.exit()
+    createQuick.task(JsonObject, PathToFile, Arguments);
+    process.exit();
   }
-  create.task(JsonObject, PathToFile, Arguments[3])
-} else if  (Arguments.includes('remove')) {
+  create.task(JsonObject, PathToFile, Arguments[3]);
+} else if (Arguments.includes('remove')) {
   remove.task(JsonObject, PathToFile, Arguments[3]);
-} else if  (Arguments.includes('move')) {
+} else if (Arguments.includes('move')) {
   move.task(JsonObject, PathToFile, Arguments[3]);
-} else if  (Arguments.includes('info')) {
+} else if (Arguments.includes('info')) {
   info(JsonObject, Arguments[3]);
-} else if (Arguments.includes('user')) {
-  user(JsonObject, PathToFile)
-} else if  (Arguments.includes('help')) {
+} else if (Arguments.includes('help')) {
   help();
-} else if  (Arguments[2] === undefined) {
+} else if (Arguments[2] === undefined) {
   if (JsonObject.tasks.length > 0) {
     list.task(JsonObject);
   } else {

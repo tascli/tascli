@@ -3,12 +3,6 @@
 // CHALK - Terminal string styling done right
 const chalk = require('chalk');
 
-// BOXEN - Create boxes in the terminal
-const boxen = require('boxen');
-
-// CLiUi - Easily create complex multi-column command-line-interfaces.
-const ui = require('cliui')();
-
 // ### M ###
 // ### A ###
 // ### i ###

@@ -18,7 +18,6 @@ const getTask = require('../helpers/getTask.js');
 
 module.exports = {
   task: (JsonObject, PathToFile, Argument) => {
-
     // DEFINED the prompt
     const question = {
       type: 'select',
@@ -30,7 +29,6 @@ module.exports = {
         { title: chalk.cyan('planned'), value: 'planned' },
       ],
     };
-    
 
     // START the prompt
     (async () => {

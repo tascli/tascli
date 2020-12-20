@@ -6,6 +6,9 @@
     "tascli": "main.js"
   },
   "main": "main.js",
+  "scripts": {
+    "build": "pkg . --target host --output tascli.exe --debug"
+  },
   "dependencies": {
     "@amphibian/remove-from-array": "^2.0.3",
     "boxen": "^4.2.0",
@@ -13,6 +16,7 @@
     "cliui": "^6.0.0",
     "jsonfile": "^6.0.1",
     "prompts": "^2.3.2",
+    "socket.io-client": "^3.0.1",
     "update-notifier": "4.1.1"
   },
   "devDependencies": {
@@ -35,6 +39,9 @@
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/tascli/tascli/issues"
+  },
+  "pkg": {
+    "assets": "node_modules/**/*"
   },
   "homepage": "https://tascli.github.io/"
 }

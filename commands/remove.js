@@ -9,7 +9,7 @@ const chalk = require('chalk');
 // REMOVE-FROM-ARRAY - remove an index from an array
 const removeFromArray = require('@amphibian/remove-from-array');
 
-const getTask = require('../helpers/getTask.js')
+const getTask = require('../helpers/getTask.js');
 
 module.exports = {
   task: (JsonObject, PathToFile, argument) => {

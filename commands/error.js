@@ -16,5 +16,5 @@ module.exports = {
   WhereAreArgument: () => {
     console.log(` ${chalk.bold.red('Where are the argument?')}\n\n Have you forgot the argument? \n Type ${chalk.gray('$')} ${chalk.cyan('tascli')} ${chalk.bold('help')} to find a available command.
     `);
-  }
+  },
 };
