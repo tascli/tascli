@@ -33,3 +33,20 @@ jobs:
       
       - name: Build with pkg
         run: pkg . --target host --output tascli --debug
+        
+      - name: check for changes
+        run: git status
+      
+      - name: stage changed files
+        run: git add .
+      
+      - name: commit changed files
+        run: git commit -m "update"
+      
+      - name: fetch from master
+        run: git fetch origin master
+      
+      - name: push code to master
+        run: git push orgin HEAD:master
+
+       
