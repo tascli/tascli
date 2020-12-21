@@ -24,9 +24,22 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
+      - name: install pkg
+        run: npm i -g pkg
+      
       - name: install npm-dependencies
         run: npm i
-      
-      # Runs a single command using the runners shell
+        
       - name: Build with pkg
-        run: pkg . --target host --output tascli.exe --debug
+        run: pkg . --target host --output tascli.exe
+        
+      - name: Commit files
+        run: |
+          git config --local user.name  ${{ github.actor }}
+          git add tascli.exe
+          git commit -m "Update"
+      - name: Push changes  # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
