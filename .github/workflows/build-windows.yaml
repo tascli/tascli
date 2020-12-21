@@ -36,6 +36,7 @@ jobs:
       - name: Commit files
         run: |
           git config --local user.name  ${{ github.actor }}
+          git config --local user.email  kramerbastian@gmx.net
           git add tascli.exe
           git commit -m "Update"
       - name: Push changes  # push the output folder to your repo
