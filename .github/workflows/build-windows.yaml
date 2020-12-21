@@ -31,7 +31,7 @@ jobs:
         run: npm i
         
       - name: Build with pkg
-        run: pkg . --target host --output tascli.exe
+        run: pkg . --target host --output dist\tascli.exe
         
       - name: Commit files
         run: |
