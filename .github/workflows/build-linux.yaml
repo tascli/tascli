@@ -32,12 +32,12 @@ jobs:
         run: npm i
       
       - name: Build with pkg
-        run: pkg . --target host --output tascli --debug
+        run: pkg . --target host --output dist/tascli --debug
         
       - name: Commit files  # transfer the new html files back into the repository
         run: |
           git config --local user.name  ${{ github.actor }}
-          git add tascli
+          git add dist/tascli
           git commit -m "Update"
       - name: Push changes  # push the output folder to your repo
         uses: ad-m/github-push-action@master
