@@ -1,4 +1,4 @@
-![Node.js Package](https://github.com/tascli/tascli/workflows/Node.js%20Package/badge.svg) ![Build linux](https://github.com/kramerbastian/tascli/workflows/Build%20Linux/badge.svg) ![Build windows](https://github.com/kramerbastian/tascli/workflows/Build%20Windows/badge.svg)
+![Node.js Package](https://github.com/tascli/tascli/workflows/Node.js%20Package/badge.svg) ![Build linux](https://github.com/tascli/tascli/workflows/Build%20Linux/badge.svg) ![Build windows](https://github.com/tascli/tascli/workflows/Build%20Windows/badge.svg)
 
 # TasCLI
 
