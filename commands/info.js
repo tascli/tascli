@@ -1,22 +1,26 @@
-// ### DEPENDENCIES ###
+// COLORS
+import { red, bold, yellow, cyan } from 'https://deno.land/std@0.83.0/fmt/colors.ts'
 
-/** CHALK - Terminal string styling done right */
-const chalk = require('chalk');
+export const infoLocalTask = async (taskName, json) => {
+    for (let i = 0; i < json.tasks.length; i++) {
+        const task = json.tasks[i]
+        let taskFavourite = ''
+        if (task.name === taskName) {
+            if (task.favourite) {
+                taskFavourite = yellow('★')    
+            } else if (!task.favourite) {
+                taskFavourite = " "
+            }
 
-// ### HELPERS ###
 
-/** Get task by name */
-const getTask = require('../helpers/getTask.js');
+            console.log(`${bold(cyan(task.name))} ${taskFavourite}`)
+            console.log(`   ${bold('Description:')} ${task.description}`)
+            console.log(`   ${bold('Date:')} ${task.date}`)
+            console.log(`   ${bold('Finished:')} ${task.finished}`)
+            Deno.exit(200)
+        }
+    }
 
-/** Set color by status */
-const colorByStatus = require('../helpers/colorByStatus.js');
-
-module.exports = (JsonObject, Argument) => {
-  console.log(`
-${colorByStatus(JsonObject.tasks, Argument)}  ${chalk.gray(getTask(JsonObject.tasks, Argument).user)}  ${(getTask(JsonObject.tasks, Argument).star ? chalk.yellow('★') : chalk.gray('★'))}
-
-${chalk.bold('date:')} ${chalk.italic(getTask(JsonObject.tasks, Argument).date)} 
-${chalk.bold('description:')} ${chalk.italic(getTask(JsonObject.tasks, Argument).description)}
-${chalk.bold('user:')} ${chalk.italic(getTask(JsonObject.tasks, Argument).user)}
-    `);
-};
+    console.log(`${red('404')} - not found`)
+    Deno.exit(404)
+}

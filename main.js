@@ -1,112 +1,75 @@
-#!/usr/bin/env node
-// ### DEPENDENCIES ###
+// COLORS
+import { bold } from 'https://deno.land/std@0.83.0/fmt/colors.ts'
 
-// FileSystem
-const fs = require('fs');
+// JSON
+import loadJsonFile from 'https://deno.land/x/load_json_file@v1.0.0/mod.ts'
 
-// CHALK - Terminal string styling done right
-const chalk = require('chalk');
+// INIT
+import initJson from './commands/init.js'
 
-// OS
-const os = require('os');
+// HELP
+import help from './commands/help.js'
 
-// UPDATE-NOTIFIER - Update notifications for your CLI app
-const updateNotifier = require('update-notifier');
+// CREATE
+import { createLocalTask } from './commands/create.js'
 
-// ### VARIABLES ###
+// LIST
+import { listLocalTasks } from './commands/list.js'
 
-// Arguments
-const Arguments = process.argv;
+// TICK
+import { tickLocalTask } from './commands/tick.js'
 
-// JsonTemplate
-const JsonTemplate = { tasks: [], users: [] };
+// INFO
+import { infoLocalTask } from './commands/info.js'
 
-const pkg = require('./package.json');
+// DELETE
+import { deleteLocalTask } from './commands/delete.js'
 
-// CHECK for update
-updateNotifier({ pkg, updateCheckInterval: 0 }).notify();
+// ENV
+const HOME = Deno.env.get('HOME')
 
-// ###### JsonFile ######
+// ARGUMENTS
+const command = Deno.args[0]
+const subCommand = Deno.args[1]
+const args = Deno.args
 
-// Path to tascli.json
-const PathToFile = `${os.homedir()}/tascli.json`;
+// JSON
+let json = {}
 
-// CREATE tascli.json
-if (Arguments[2] === 'init') {
-  const data = JSON.stringify(JsonTemplate, null, 4);
-  fs.writeFileSync(PathToFile, data, 'utf8');
-  console.log(`${chalk.green('✔')} created tascli.json in ${chalk.bold(os.homedir())}`);
-  process.exit();
+if (command === 'init') {
+    await initJson()
 }
 
-// CHECK exist tacli.json
-if (fs.existsSync(PathToFile) === false) {
-  console.log(`\n${chalk.bold('There isn’t a storage file')}\nUse ${chalk.gray('$')} ${chalk.green.bold('tacli init')} to create a starage file`);
-  process.exit();
+
+// LOAD JSON
+try {
+    json = await loadJsonFile(`${HOME}/tascli.json`)
+} catch (error) {
+    console.log(`There is no valid JSON in "${HOME}". Please use ${bold(`tascli init`)} to create them.`)
+    Deno.exit(400)
 }
 
-const JsonFile = require(PathToFile);
-
-// ### LIB ###
-
-// CREATE.js
-const create = require('./commands/create.js');
-const createQuick = require('./commands/createQuick.js');
-
-// REMOVE.js
-const remove = require('./commands/remove.js');
-
-// MOVE.js
-const move = require('./commands/move.js');
-
-// LIST.js
-const list = require('./commands/list.js');
-
-// HELP.js
-const help = require('./commands/help.js');
-
-// ERROR.js
-const error = require('./commands/error.js');
-
-/** INFO.js - Get more info about a task */
-const info = require('./commands/info.js');
-// ###### other VARIABLES / OBJECTS ######
-
-// JsonObject
-const JsonObject = JsonFile;
-
-if (Arguments[2] === undefined || Arguments[2] === 'help') {
-
-} else if (Arguments[3] === undefined) {
-  error.WhereAreArgument();
-  process.exit();
-}
-
-// ### M ###
-// ### A ###
-// ### I ###
-// ### N ###
-
-if (Arguments.includes('create')) {
-  if (Arguments.includes('--quick') || Arguments.includes('-q')) {
-    createQuick.task(JsonObject, PathToFile, Arguments);
-    process.exit();
-  }
-  create.task(JsonObject, PathToFile, Arguments[3]);
-} else if (Arguments.includes('remove')) {
-  remove.task(JsonObject, PathToFile, Arguments[3]);
-} else if (Arguments.includes('move')) {
-  move.task(JsonObject, PathToFile, Arguments[3]);
-} else if (Arguments.includes('info')) {
-  info(JsonObject, Arguments[3]);
-} else if (Arguments.includes('help')) {
-  help();
-} else if (Arguments[2] === undefined) {
-  if (JsonObject.tasks.length > 0) {
-    list.task(JsonObject);
-  } else {
-    console.log(chalk.bold('\n✔  time to chill\n'));
-  }
-} else {
-  error.BadArgument();
+// PARSE ARGUMENTS
+if (command === 'help') {
+    help()
+} else if (command === 'task') {
+    if (subCommand === 'create') {
+        await createLocalTask(args[2], json, HOME)
+    }
+    else if (subCommand === 'list') {
+        listLocalTasks(args[2], json)
+    }
+    else if (subCommand === 'tick') {
+        tickLocalTask(args[2], json, HOME)
+    }
+    else if (subCommand === 'info') {
+        infoLocalTask(args[2], json)
+    }
+    else if (subCommand === 'delete') {
+        deleteLocalTask(args[2], json, HOME)
+    }
+} else if (command === 'tasks') {
+    if (subCommand === 'list') {
+        listLocalTasks(args[2], json)
+    }
 }
