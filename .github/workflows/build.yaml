@@ -1,0 +1,60 @@
+name: Build
+
+on:
+  push:
+    branches: [ Rewriting/dart ]
+  pull_request:
+    branches: [ Rewriting/dart ]
+  workflow_dispatch: true
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: cedx/setup-dart@v2
+
+      - name: install dependencies
+        run: dart pub get
+
+      - name: Build
+        run: dart compile exe .\lib\main.dart -o .\bin\tascli.exe
+
+      - name: Commit files
+        run: |
+          git config --local user.name  Github Actions
+          git config --local user.email  github-actions@github.com
+          git add bin/tascli.exe
+          git commit -m "Update executable"
+      - name: Push changes  # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: cedx/setup-dart@v2
+
+      - name: install dependencies
+        run: dart pub get
+
+      - name: Build
+        run: dart compile exe .\lib\main.dart -o .\bin\tascli
+
+      - name: Commit files
+        run: |
+          git config --local user.name  Github Actions
+          git config --local user.email  github-actions@github.com
+          git add bin/tascli
+          git commit -m "Update executable"
+      - name: Push changes  # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
+
