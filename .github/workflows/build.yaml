@@ -28,10 +28,11 @@ jobs:
           git add bin/tascli.exe
           git commit -m "Update executable"
       - name: Push changes  # push the output folder to your repo
-        uses: ad-m/github-push-action@Rewriting/dart
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
+          branch: Rewriting/dart
 
   build-linux:
     runs-on: ubuntu-latest
@@ -53,8 +54,9 @@ jobs:
           git add bin/tascli
           git commit -m "Update executable"
       - name: Push changes  # push the output folder to your repo
-        uses: ad-m/github-push-action@Rewriting/dart
+        uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
+          branch: Rewriting/dart
 
