@@ -44,7 +44,7 @@ jobs:
         run: dart pub get
 
       - name: Build
-        run: dart compile exe .\lib\main.dart -o .\bin\tascli
+        run: dart compile exe ./lib/main.dart -o ./bin/tascli
 
       - name: Commit files
         run: |
