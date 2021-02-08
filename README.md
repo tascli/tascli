@@ -3,12 +3,6 @@
 ## Description
 Tascli is an open-source task-manager like [monday.com](https://www.monday.com), but for command line nerds.
 
-## Features
-
-- Easy syntax
-- Beautiful list
-and many more
-
 ## Install
 
 ### Linux:
@@ -26,14 +20,14 @@ and many more
 
 ## Documentation
 
-`tascli tasks list` - list all tasks
+`tascli list` - list all tasks
 
-`tascli task create <name>` - create a task
+`tascli create <name>` - create a task
 
-`tascli task info <name>` - get more info about a task
+`tascli delete <name>` - delete a task
 
-`tascli task delete <name>` - delete a task
+`tascli tick <name>` - tick this task
 
-`tascli task tick <name>` - tick this task
+`tascli untick <name>` - untick this task
 
 `tascli init` - create an empty json-file to store your tasks
