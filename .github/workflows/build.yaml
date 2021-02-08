@@ -28,7 +28,7 @@ jobs:
           git add bin/tascli.exe
           git commit -m "Update executable"
       - name: Push changes  # push the output folder to your repo
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@Rewriting/dart
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
@@ -53,7 +53,7 @@ jobs:
           git add bin/tascli
           git commit -m "Update executable"
       - name: Push changes  # push the output folder to your repo
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@Rewriting/dart
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
