@@ -27,6 +27,10 @@ jobs:
           git config --local user.email  github-actions@github.com
           git add bin/tascli.exe
           git commit -m "Update executable"
+          
+      - name: Pull
+        run: git pull
+          
       - name: Push changes  # push the output folder to your repo
         uses: ad-m/github-push-action@master
         with:
@@ -53,6 +57,10 @@ jobs:
           git config --local user.email  github-actions@github.com
           git add bin/tascli
           git commit -m "Update executable"
+          
+      - name: Pull
+        run: git pull
+          
       - name: Push changes  # push the output folder to your repo
         uses: ad-m/github-push-action@master
         with:
