@@ -14,5 +14,8 @@ doc/api/
 *.iws
 .idea/
 
+#VSCode
+.vscode/
+
 # Mac
 .DS_Store
