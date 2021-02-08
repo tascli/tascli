@@ -5,7 +5,7 @@ on:
     branches: [ Rewriting/dart ]
   pull_request:
     branches: [ Rewriting/dart ]
-  workflow_dispatch: true
+  workflow_dispatch:
 
 jobs:
   build-windows:
