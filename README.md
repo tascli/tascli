@@ -2,18 +2,10 @@
 
 # TasCLI
 
-<div style="width: 100%; text-align:center;">
-    <img src="images/list.gif" style="border-radius: 5px; height: 200px; width:auto; box-shadow: 10px 10px 15px -3px rgba(138,138,138,1);">
-</div>
+![](https://github.com/tascli/tascli/raw/master/images/tascli.png)
 
 ## Description
 Tascli is an open-source task-manager like [monday.com](https://www.monday.com), but for command line nerds.
-
-## Features
-
-- Easy syntax
-- Beautiful list
-and many more
 
 ## Install
 
