@@ -5,11 +5,28 @@
 ![](https://github.com/tascli/tascli/raw/master/images/tascli.png)
 
 ## Description
-Tascli is an open-source task-manager like [monday.com](https://www.monday.com), but for command line nerds.
+Tascli is an open-source task-manager like [monday.com](https://www.monday.com), but for command line lovers.
 
 ## Install
 
-You have installed [nodejs](https://www.nodejs.org) to run tascli
+### Classic:
+
+#### Windows:
+
+1. Download the [tascli.exe](https://github.com/tascli/tascli/raw/master/dist/tascli.exe) and drag it where ever you like
+2. Open the cmd and type: setx PATH "PATH TO YOUR DOWNLOADED .EXE"
+3. Done 😀
+
+#### Linux:
+
+1. Download tascli and drag it where ever you like
+2. Open the terminal and type: echo 'export PATH="PATH TO YOUR DOWNLOADED FILE"' >> ~/.bashrc
+3. Done 😎
+
+
+### Node.js
+
+You need to have installed [nodejs](https://nodejs.org) to run tascli
 
 Using [npm](https://www.npmjs.org) / [yarn](https://yarnpkg.com/):
 
