@@ -12,9 +12,9 @@ void createLocalTask(Map<String, dynamic> json, String taskName) {
 
   task['description'] = prompts.get('And the description?');
   task['date'] = prompts.get('When should this task finished?');
-  task['favourite'] = prompts.getBool('Do you love it?');
+  task['favourite'] = prompts.getBool('Mark as favourite?');
 
-  task['finished'] = false;
+  task['state'] = 1;
 
   List<dynamic> tasks = json['tasks'];
   tasks.add(task);

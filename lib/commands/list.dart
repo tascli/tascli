@@ -1,20 +1,21 @@
-import 'package:tascli/helpers/colors.dart';
-import 'package:tascli/helpers/types.dart';
+import 'package:colorize/colorize.dart';
 
 void listLocalTasks (Map<String, dynamic> json) {
-  List<dynamic> tasks = json['tasks'];
 
-  for (int i = 0; i < tasks.length; i++) {
-    String name = gray(tasks[i]['name']);
-    String tick = ' ';
-    if (tasks[i]['finished']) {
-      tick = green('✓');
+  for (var i = 0; i < json['states'].length; ++i) {
+    Map<String, dynamic> state = json['states'][i];
+
+    // TODO: Add more colors
+    if (state['color'] == 'blue') {
+      print(new Colorize('${json['states'][i]['name']}:')..cyan()..bold());
     }
-    String favourite = '';
-    if (tasks[i]['favourite']) {
-      favourite = yellow('★');
+
+    for (var n = 0; n < json['tasks'].length; ++n) {
+      if (json['tasks'][n]['state'] == state['name']) {
+        print('  ${new Colorize('${json['tasks'][n]['id']}.')..darkGray()} ${new Colorize(json['tasks'][n]['name'])..bold()..underline()} ${json['tasks'][n]['description']}');
+      }
     }
-    String description = tasks[i]['description'];
-    print('$tick $name  $description  $favourite');
   }
+
+
 }

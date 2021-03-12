@@ -1,17 +1,17 @@
-import 'package:tascli/helpers/colors.dart';
+import 'package:colorize/colorize.dart';
 
 void commandNotFound() {
-  print(red('404') + ' - requested command not found!');
-  print('Tip: ' + yellow('tascli') + ' help');
+  print('${new Colorize('404')..red()}- requested command not found!');
+  print('Tip: ${new Colorize('tascli')..yellow()}help');
 }
 
 void taskNotFound() {
-  print(red('404') + ' - task not found!');
-  print('Tip: Use ' + yellow('tascli ') + 'list to find existing task.');
+  print('${new Colorize('404')..red()}- task not found!');
+  print('Tip: Use ${new Colorize('tascli ')..yellow()}list to find existing task.');
 }
 
 void unexpectedError() {
-  print(red('500') + ' - short: we don\'t know why');
+  print('${new Colorize('500')..red()}- short: we don\'t know why');
   print('Tip: Submit an issue on https://github.com/tascli/tascli/issues.');
 }
 
