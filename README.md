@@ -8,15 +8,8 @@ Tascli is an open-source task-manager like [monday.com](https://www.monday.com),
 ### Linux:
 
  1. Download the (tascli binary)[https://github.com/tascli/tascli/raw/REWRITING/deno/bin/tascli] and drag it where ever you like
- 2. Open the terminal and type: `export PATH=$PATH:PATH TO YOUR DOWNLOADED FILE`
+ 2. Open the ~/.bashrc file and type: `export PATH=$PATH:PATH TO YOUR DOWNLOADED FILE`
  3. Done 😀
-
-### Windows:
- 
- 1. Download the (tascli.exe)[https://github.com/tascli/tascli/raw/REWRITING/deno/bin/tascli.exe] and drag it where ever you like
- 2. Open the cmd and type: setx PATH "PATH TO YOUR DOWNLOADED .EXE"
- 3. Done 😀
-
 
 ## Documentation
 
