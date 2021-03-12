@@ -1,21 +1,34 @@
-import { bold, underline } from 'https://deno.land/std@0.83.0/fmt/colors.ts'
+// ### DEPENDENCIES ###
 
-const help = () => {
-    console.log(`
-Available commands:
+// CHALK - Terminal string styling done right
+const chalk = require('chalk');
 
-  Tasks:
-    ${bold('tascli task create')} - create new task
-    ${bold('tascli task delete')} - delete a task
-    ${bold('tascli task edit')} - edit the parameters of a task
+// CLIUI - Easily create complex multi-column command-line-interfaces.
+const ui = require('cliui')();
 
-  Users:
-    ${bold('tascli user create')} - create new task
-    ${bold('tascli user delete')} - delete a task
-    ${bold('tascli user edit')} - edit the parameters of a task
-    `)
+// ### M ###
+// ### A ###
+// ### I ###
+// ### N ###
 
-    Deno.exit(200)
-}
+module.exports = () => {
+  ui.div({
+    text: `
+            ${chalk.bold('Available commands')}:
 
-export default help
+            ${chalk.gray('$')} ${chalk.cyan('tascli')}               - list all tasks
+            ${chalk.gray('$')} ${chalk.cyan('tascli')} create ${chalk.gray('<task>')} - create a task
+            ${chalk.gray('$')} ${chalk.cyan('tascli')} remove ${chalk.gray('<task>')} - delete a task
+            ${chalk.gray('$')} ${chalk.cyan('tascli')} move ${chalk.gray('<task>')}   - set the status of a task
+          `,
+    width: 55,
+  }, {
+    text: `
+            ${chalk.bold('About tascli')}:
+
+            Tascli is an open-source task-manager like monday.com, but for command line nerds.
+          `,
+    width: 55,
+  });
+  console.log(ui.toString());
+};

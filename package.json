@@ -1,0 +1,75 @@
+{
+  "_from": "tascli",
+  "_id": "tascli@2.2.3",
+  "_inBundle": false,
+  "_integrity": "sha512-Y67+QF+glKyNty+CD0l1lKNLxwGM0udH+Q3h8h2xZN2oZu5Q6dN9l9DKiPD2GhETKviZKD1UpmmL+tVPC9krfw==",
+  "_location": "/tascli",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "tascli",
+    "name": "tascli",
+    "escapedName": "tascli",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/tascli/-/tascli-2.2.3.tgz",
+  "_shasum": "9889e77348d896fd4dff6453ced945796298bf2e",
+  "_spec": "tascli",
+  "_where": "C:\\Users\\krame",
+  "author": {
+    "name": "Bastian Kramer"
+  },
+  "bin": {
+    "tascli": "main.js"
+  },
+  "bugs": {
+    "url": "https://github.com/tascli/tascli/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@amphibian/remove-from-array": "^2.0.3",
+    "boxen": "^4.2.0",
+    "chalk": "^4.1.0",
+    "cliui": "^6.0.0",
+    "jsonfile": "^6.0.1",
+    "prompts": "^2.3.2",
+    "socket.io-client": "^3.0.1",
+    "update-notifier": "4.1.1"
+  },
+  "deprecated": false,
+  "description": "Tascli is an open-source task-manager like monday.com, but for command line nerds.",
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  },
+  "homepage": "https://tascli.github.io/",
+  "keywords": [
+    "cli",
+    "cli-tool",
+    "task-manager",
+    "todo",
+    "nodejs"
+  ],
+  "license": "GPL-3.0",
+  "main": "main.js",
+  "name": "tascli",
+  "pkg": {
+    "assets": "node_modules/**/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tascli/tascli.git"
+  },
+  "scripts": {
+    "build": "pkg . --target host --output tascli.exe --debug"
+  },
+  "version": "2.2.3"
+}
