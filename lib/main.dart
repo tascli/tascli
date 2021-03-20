@@ -1,4 +1,5 @@
 import 'package:args/args.dart';
+import 'package:tascli/commands/move.dart';
 import 'package:tascli/helpers/error.dart';
 import 'package:tascli/helpers/json.dart';
 import 'package:tascli/commands/list.dart';
@@ -46,6 +47,11 @@ void main(arguments) async {
     // Init
     else if (argResults.rest[0] == 'init') {
       init();
+    }
+
+    // Move
+    else if (argResults.rest[0] == 'move') {
+      moveLocalTask(json, argResults.rest[1], argResults.rest[2]);
     }
 
     // 404

@@ -22,8 +22,6 @@ void createLocalTask(Map<String, dynamic> json, String taskName, String taskDesc
   tasks.add(task);
   writeJson(json);
 
-  print(json['tasks'].indexOf(task));
-
   task['id'] = json['tasks'].indexOf(task);
   task['id'] = task['id'] + 1;
   writeJson(json);
